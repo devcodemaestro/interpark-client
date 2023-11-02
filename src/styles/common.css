@@ -1,0 +1,52 @@
+/* 슬라이드 좌우 버튼 */
+
+/* 버튼 숨기기 */
+.slide-prev-bt.swiper-button-disabled {
+  display: none !important;
+}
+.slide-next-bt.swiper-button-disabled {
+  display: none !important;
+}
+
+.slide-prev-bt {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+
+  /* 내용물만 옮겨준다. */
+  transform: translate(-50%, -50%);
+
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e3e2e3;
+  border-radius: 50%;
+  cursor: pointer;
+
+  /* 그림자 */
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+}
+
+.slide-prev-bt img {
+  transform: rotate(180deg);
+}
+
+.slide-next-bt {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 2;
+
+  /* 내용물만 옮겨준다. */
+  transform: translate(50%, -50%);
+
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e3e2e3;
+  border-radius: 50%;
+  cursor: pointer;
+  /* 그림자 */
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+}

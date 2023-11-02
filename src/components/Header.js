@@ -29,7 +29,7 @@ function Header() {
               <li>
                 <a href="#" id="mypage-bt" className="mypage-bt">
                   마이페이지
-                  <img src="../images/icon_arrow.svg" alt="" />
+                  <img src=" ../images/icon_arrow.svg" alt="" />
                 </a>
               </li>
             </ul>
