@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Visual from "./components/Visual";
 import Recommend from "./components/Recommend";
+import Tour from "./components/Tour";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="main">
         <Visual />
         <Recommend />
+        <Tour />
       </div>
       {/* <!-- 하단 영역 --> */}
       <footer className="footer"></footer>

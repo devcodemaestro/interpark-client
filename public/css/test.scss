@@ -1,0 +1,84 @@
+// 주석은 출력안됨
+
+/* 
+ scss 에 대한 이해
+*/
+// 변수 만들기
+$bg: red;
+$fontColr: green;
+$pcWidth: 1280px;
+$noteWidth: 1024px;
+$mbWidth: 960px;
+$phoneWidth: 480px;
+$bgImg: "images/a.jpg";
+
+$screenSize: $pcWidth;
+// 중첩 (Nesting)
+section {
+  position: relative;
+  background-color: $bg;
+  font-size: $nameSize;
+  .inner {
+    // 변수를 만들었다.
+    $nameSize: 50px !global;
+
+    position: relative;
+    display: flex;
+    .logo {
+      font-size: $nameSize;
+      position: relative;
+      background-color: $bg;
+      &.gogo {
+        width: 200px;
+      }
+
+      a:hover {
+        background-color: green;
+      }
+
+      a {
+        &:active {
+          background-color: blue;
+        }
+        position: relative;
+        display: block;
+        text-align: center;
+        > img {
+          width: 100%;
+          height: 100%;
+          //   벤더 프리 픽스라고 합니다.
+          object-fit: contain;
+          border-radius: 50px;
+          transform: rotate(360deg);
+
+          //   중첩 빠져나가기
+          @at-root section {
+            width: 5000px;
+          }
+        }
+      }
+    }
+    .sns {
+      position: relative;
+      //   중첩 속성(프로퍼티)
+      //   font-size: 10px;
+      //   font-family: "Nanum";
+      //   font-weight: 400;
+      font: {
+        size: 10px;
+        family: "Nanum";
+        weight: 400;
+      }
+      background: {
+        color: red;
+        image: url();
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+      }
+    }
+    .copy {
+      position: relative;
+    }
+  }
+}

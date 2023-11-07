@@ -5,12 +5,13 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import "../styles/recommend.css";
+import "../styles/tour.css";
 import "../styles/common.css";
+
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-function Recommend() {
+function Tour() {
   // js 코드 자리
   // JSX 의 요소를 React 에서 참조
   const swiperRef = useRef();
@@ -21,14 +22,14 @@ function Recommend() {
   // 외부 데이터 연동하기 (axios 이용)
   const axiosJsonData = () => {
     axios
-      .get("recommend.json")
+      .get("tour.json")
       .then((res) => {
         // 자료를 원하는데로 처리하겠다.
         // result를 화면에 출력하겠다.
         // 자료가 바뀌면 화면을 변경하는 기능을 생성하겠다.
         let arr = [];
         for (let i = 0; i < res.data.total; i++) {
-          const obj = res.data["good_" + (i + 1)];
+          const obj = res.data["tour_" + (i + 1)];
           arr[i] = obj;
         }
         console.log(arr);
@@ -82,53 +83,46 @@ function Recommend() {
   }, []);
 
   return (
-    <section className="recommend">
-      <div className="recommend-inner">
-        <div className="recommend-header">
-          <h2 className="recommend-title">쇼핑추천</h2>
-          <span className="recommend-txt">
-            할인이 쎄다! 지금, 특가 상품을 확인하세요.
-          </span>
+    <section className="tour">
+      <div className="tour-inner">
+        <div className="tour-header">
+          <h2 className="tour-title">투어 특가</h2>
+          <span className="tour-txt">해외 여행은 인터파크다</span>
         </div>
 
-        <div className="recommend-main">
-          <div className="recommend-category">
-            <ul className="recommend-list">
+        <div className="tour-main">
+          <div className="tour-category">
+            <ul className="tour-list">
               <li>
-                <button className="recommend-cate-bt recommend-cate-bt-active">
-                  쎈딜
+                <button className="tour-cate-bt tour-cate-bt-active">
+                  망설이면 품절
                 </button>
               </li>
               <li>
-                <button className="recommend-cate-bt">베스트</button>
+                <button className="tour-cate-bt">패키지</button>
               </li>
               <li>
-                <button className="recommend-cate-bt">블프데이</button>
+                <button className="tour-cate-bt">국내숙소</button>
               </li>
               <li>
-                <button className="recommend-cate-bt">디지털프라자</button>
-              </li>
-              <li>
-                <a href="#!" className="recommend-cate-bt">
-                  소담상회
-                </a>
+                <button className="tour-cate-bt">해외숙소</button>
               </li>
             </ul>
           </div>
-          <div className="recommend-slide-wrap">
+          <div className="tour-slide-wrap">
             <Swiper
-              slidesPerView={4}
+              slidesPerView={3}
               spaceBetween={27}
-              slidesPerGroup={4}
+              slidesPerGroup={3}
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
               }}
               modules={[Navigation]}
               navigation={{
-                nextEl: ".recommend-slide-wrap .slide-next-bt",
-                prevEl: ".recommend-slide-wrap .slide-prev-bt",
+                nextEl: ".tour-slide-wrap .slide-next-bt",
+                prevEl: ".tour-slide-wrap .slide-prev-bt",
               }}
-              className="recommend-slide"
+              className="tour-slide"
             >
               {htmlTag.map((item, index) => {
                 return (
@@ -136,23 +130,31 @@ function Recommend() {
                     {index === htmlTag.length - 1 ? (
                       <a href={item.url}>바로가기</a>
                     ) : (
-                      <div className="recommend-slide-item">
-                        <a href={item.url} className="recommend-link">
-                          <div className="recommend-img">
+                      <div className="tour-slide-item">
+                        <a href={item.url} className="tour-link">
+                          <div className="tour-img">
                             <img src={item.image} alt={item.desc} />
                           </div>
-                          <div className="recommend-info">
-                            <ul className="recommend-good-list">
-                              <li>
-                                <span className="recommend-good-info-price">
-                                  <b>{item.discount}%</b>
-                                  <em>{item.price}</em>원
+                          <div className="tour-info">
+                            <ul className="tour-good-list">
+                              <li className="tour-good-info">
+                                <i className="tour-good-info-badge">
+                                  {item.badge}
+                                </i>
+                              </li>
+                              <li className="tour-good-info">
+                                <p className="tour-good-info-benefit">
+                                  {item.benefit}
+                                </p>
+                                <span className="tour-good-info-desc">
+                                  {item.desc}
                                 </span>
                               </li>
-                              <li>
-                                <p className="recommend-good-info-desc">
-                                  {item.desc}
-                                </p>
+                              <li className="tour-good-info">
+                                <span>
+                                  <b>{item.price}</b>
+                                  원~
+                                </span>
                               </li>
                             </ul>
                           </div>
@@ -173,11 +175,11 @@ function Recommend() {
           </div>
         </div>
 
-        <div class="recommend-footer">
-          <a href="#!">쇼핑 홈 바로가기</a>
+        <div className="tour-footer">
+          <a href="#!">투어 홈 바로가기</a>
         </div>
       </div>
     </section>
   );
 }
-export default Recommend;
+export default Tour;

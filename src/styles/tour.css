@@ -1,0 +1,159 @@
+.tour {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 90px;
+}
+.tour-inner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.tour-header {
+  position: relative;
+  text-align: center;
+}
+
+.tour-title {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.tour-txt {
+  position: relative;
+  font-size: 1.8rem;
+  color: #a7a9a7;
+}
+
+.tour-main {
+  position: relative;
+  padding: 25px 0;
+}
+
+.tour-category {
+  position: relative;
+}
+
+.tour-list {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.tour-cate-bt {
+  position: relative;
+  padding: 0 20px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  font-size: 1.4rem;
+  line-height: 42px;
+  color: #111;
+  cursor: pointer;
+  border-radius: 44px;
+}
+
+.tour-cate-bt-active {
+  position: relative;
+  border: 1px solid transparent !important;
+  background-color: #333 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+.tour-slide-wrap {
+  height: 355px;
+  margin-top: 23px;
+}
+.tour-slide-item {
+  position: relative;
+  height: 355px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.tour-img {
+  width: 100%;
+  height: 24.4rem;
+  overflow: hidden;
+}
+
+.tour-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tour-info {
+  position: relative;
+  height: calc(100% - 244px);
+  padding: 22px 20px;
+}
+
+.tour-good-info-badge {
+  position: absolute;
+  height: 3.2rem;
+  padding: 0.8rem 1.2rem;
+  top: -1.6rem;
+  background-color: #1769ff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.tour-good-info-benefit {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: #1769ff;
+}
+
+.tour-good-info-desc {
+  display: block;
+  margin: 0.4rem 0;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.tour-good-info-price {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.tour-good-info-unit {
+  font-size: 1.6rem;
+}
+
+.tour-footer {
+  text-align: center;
+}
+
+.tour-footer a {
+  display: inline-block;
+  width: auto;
+  height: 5.6rem;
+  line-height: 5.6rem;
+  padding: 0 3.9rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.8rem;
+  font-weight: 700;
+}
+
+.tour-footer a::after {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 1.1rem;
+  margin-left: 0.7rem;
+  background: url("http://localhost:3000/publish/images/linkArrow.svg")
+    no-repeat;
+}
