@@ -1,0 +1,254 @@
+.live {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 90px;
+}
+
+.live-inner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.live-header {
+  position: relative;
+  text-align: center;
+}
+
+.live-title {
+  position: relative;
+  line-height: 3.3rem;
+}
+
+.live-title img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 4rem;
+}
+
+.live-main {
+  position: relative;
+  padding: 20px 0px;
+  margin: 0 auto;
+}
+
+.live-slide-wrap {
+  position: relative;
+  height: 456px;
+}
+.live-slide {
+  width: 100%;
+}
+
+.live-slide-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.live-slide-box {
+  display: flex;
+  width: 300px;
+  margin-right: 27px;
+}
+.live-slide-item {
+  position: relative;
+  width: 300px;
+  height: 456px;
+  overflow: hidden;
+}
+
+.live-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.live-img {
+  width: 100%;
+  overflow: hidden;
+  color: #fff;
+}
+
+.live-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.live-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.5),
+      rgba(34, 34, 34, 0.5)
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.4) 18.65%, transparent 39.78%),
+    linear-gradient(180deg, transparent 56.75%, rgba(0, 0, 0, 0.4) 87.59%);
+}
+
+.live-link-header {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  z-index: 2;
+  color: #fff;
+}
+
+.live-link-header {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  padding: 0 2rem;
+}
+
+.live-link-header-badge {
+  display: inline-block;
+  height: 3.2rem;
+  padding: 0 1.2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  line-height: 3.2rem;
+  border-radius: 1.6rem;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.live-link-header-title {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.live-link-middle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.live-link-middle-info {
+  color: #fff;
+}
+
+.live-link-middle-date {
+  font-size: 2.8rem;
+  line-height: 3.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.live-link-middle-time {
+  font-size: 5rem;
+  line-height: 6rem;
+  font-weight: 700;
+}
+
+.live-link-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 2rem;
+  height: 6.4rem;
+  padding: 0 2rem;
+}
+
+.live-link-footer a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.live-link-footer-img {
+  left: 2rem;
+  width: 6.4rem;
+  height: 6.4rem;
+  /* margin-right: 1.3rem; */
+  border-radius: 0.6rem;
+  overflow-block: hidden;
+}
+
+.live-link-footer-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow-block: hidden;
+}
+
+/* position: absolute;
+width: 100%;
+height: auto;  */
+/* 높이를 자동으로 조정하도록 설정 */
+/* object-fit: cover;
+border-radius: 0.6rem;
+overflow-block: hidden; */
+
+.live-link-footer-info {
+  position: relative;
+  display: flex;
+  width: calc(100% - 6.4rem - 1.2rem);
+  justify-content: space-around;
+  flex-direction: column;
+  font-size: 2rem;
+  line-height: 2.4re;
+  font-weight: 700;
+  color: #fff;
+}
+
+.live-link-footer-info-desc {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+.live-link-footer-price-percent {
+  color: red;
+}
+
+.live-footer {
+  text-align: center;
+  height: 6.4rem;
+}
+
+.live-footer a {
+  display: inline-block;
+  width: auto;
+  height: 5.6rem;
+  line-height: 5.6rem;
+  padding: 0 3.9rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.8rem;
+  font-weight: 700;
+}
+.live-footer a::after {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 1.1rem;
+  margin-left: 0.7rem;
+  background: url("../images/slider_arrow.svg") no-repeat;
+}

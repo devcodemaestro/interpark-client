@@ -32,6 +32,9 @@
   transform: rotate(180deg);
 }
 
+.swiper-wrapper {
+  position: relative;
+}
 .slide-next-bt {
   position: absolute;
   right: 0;
@@ -70,8 +73,7 @@
   height: 5rem;
   display: inline-block;
   margin: 0px auto 0.6rem;
-  background: url("http://localhost:3000/publish/images/btn_seeAll.svg")
-    no-repeat;
+  background: url("../images/btn_seeAll.svg") no-repeat;
   background-size: cover;
 }
 

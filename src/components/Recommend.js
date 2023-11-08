@@ -1,7 +1,9 @@
-/* eslint-classNamedisable jsx-a11y/anchor-is-valid */
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { BtCate } from "../components/ui/buttons";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -9,6 +11,8 @@ import "../styles/recommend.css";
 import "../styles/common.css";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import styled from "@emotion/styled";
+import { InnerArea, SectionTag } from "./layout/layout";
 
 function Recommend() {
   // js 코드 자리
@@ -22,13 +26,39 @@ function Recommend() {
   const axiosJsonData = () => {
     axios
       .get("recommend.json")
-      .then((res) => {
+      .then(function (res) {
+        console.log(res.data);
+
+        const result = res.data;
+        let arr = [];
+        for (let i = 0; i < result.total; i++) {
+          const obj = result["good_" + (i + 1)];
+          arr[i] = obj;
+        }
+        console.log(arr);
+        setHtmlTag(arr);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  // 외부 데이터 연동하기 (fetch 이용)
+  const getJsonData = () => {
+    fetch("recommend.json")
+      .then((response) => {
+        console.log("response : ", response);
+        // 자료가 불러들여졌을 때
+        return response.json();
+      })
+      .then((result) => {
+        console.log("result : ", result);
         // 자료를 원하는데로 처리하겠다.
         // result를 화면에 출력하겠다.
         // 자료가 바뀌면 화면을 변경하는 기능을 생성하겠다.
         let arr = [];
-        for (let i = 0; i < res.data.total; i++) {
-          const obj = res.data["good_" + (i + 1)];
+        for (let i = 0; i < result.total; i++) {
+          const obj = result["good_" + (i + 1)];
           arr[i] = obj;
         }
         console.log(arr);
@@ -39,51 +69,26 @@ function Recommend() {
         console.log("error : ", error);
       });
   };
-  // 외부 데이터 연동하기 (fetch 이용)
-  // const getJsonData = () => {
-  //   fetch("recommend.json")
-  //     .then((response) => {
-  //       console.log("response : ", response);
-  //       // 자료가 불러들여졌을 때
-  //       return response.json();
-  //     })
-  //     .then((result) => {
-  //       console.log("result : ", result);
-  //       // 자료를 원하는데로 처리하겠다.
-  //       // result를 화면에 출력하겠다.
-  //       // 자료가 바뀌면 화면을 변경하는 기능을 생성하겠다.
-  //       let arr = [];
-  //       for (let i = 0; i < result.total; i++) {
-  //         const obj = result["good_" + (i + 1)];
-  //         arr[i] = obj;
-  //       }
-  //       console.log(arr);
-  //       setHtmlTag(arr);
-  //     })
-  //     .catch((error) => {
-  //       // 에러가 발생했다.
-  //       console.log("error : ", error);
-  //     });
-  // };
 
-  //html이 준비가 되면 josn을 불러 들이겠다.
+  // html 이 준비가 되면, json 을 불러들이겠다.
   // 1. 외부데이터 부르기 좋은 자리
-  // 2. html 태그 참조 (useRef 할 때)
-  // 3. window 참좀할 때
-  // 4. window.addEventListener("scroll".charAt.apply.)
-  // 5. cleanup 할 때 : 컴포넌트 화면에서 사라질 때 실생할 함수
-  // 6. 타이머 만들고, 제거할 때
-  // 컴포넌트가 화면에 보여질 때, 실행할 내용 기재 장소
+  // 2. html 태그 참조 (useRef 할때 )
+  // 3. window 참조할때
+  // 4. window.addEventListener("scroll"...)
+  // 5. cleanUp 할때 : 컴포넌트 화면에서 사라질때 실행할 함수
+  // 6. 타이머 만들고, 제거할때.
+  // 컴포넌트가 화면에 보여질 때 실행할 내용 기재 장소
   // use 는 Hook 이라고 합니다.
   // 원하는 시점을 감시하고 실행할 함수
-
   useEffect(() => {
+    // 외부 데이터 불러들이기
     axiosJsonData();
+    // getJsonData();
   }, []);
 
   return (
-    <section className="recommend">
-      <div className="recommend-inner">
+    <SectionTag pt={0} pb={90}>
+      <InnerArea>
         <div className="recommend-header">
           <h2 className="recommend-title">쇼핑추천</h2>
           <span className="recommend-txt">
@@ -95,21 +100,19 @@ function Recommend() {
           <div className="recommend-category">
             <ul className="recommend-list">
               <li>
-                <button className="recommend-cate-bt recommend-cate-bt-active">
-                  쎈딜
-                </button>
+                <BtCate active={true}>쎈딜</BtCate>
               </li>
               <li>
-                <button className="recommend-cate-bt">베스트</button>
+                <BtCate>베스트</BtCate>
               </li>
               <li>
-                <button className="recommend-cate-bt">블프데이</button>
+                <BtCate>블프데이</BtCate>
               </li>
               <li>
-                <button className="recommend-cate-bt">디지털프라자</button>
+                <BtCate>디지털프라자</BtCate>
               </li>
               <li>
-                <a href="#!" className="recommend-cate-bt">
+                <a href="#" className="recommend-cate-bt">
                   소담상회
                 </a>
               </li>
@@ -173,11 +176,9 @@ function Recommend() {
           </div>
         </div>
 
-        <div class="recommend-footer">
-          <a href="#!">쇼핑 홈 바로가기</a>
-        </div>
-      </div>
-    </section>
+        <div className="recommend-footer"></div>
+      </InnerArea>
+    </SectionTag>
   );
 }
 export default Recommend;

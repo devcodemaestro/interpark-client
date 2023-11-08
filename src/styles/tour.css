@@ -3,6 +3,7 @@
   padding-top: 0;
   padding-bottom: 90px;
 }
+
 .tour-inner {
   position: relative;
   width: 1280px;
@@ -154,6 +155,5 @@
   width: 0.7rem;
   height: 1.1rem;
   margin-left: 0.7rem;
-  background: url("http://localhost:3000/publish/images/linkArrow.svg")
-    no-repeat;
+  background: url("../images/slider_arrow.svg") no-repeat;
 }
