@@ -137,7 +137,12 @@ function Recommend() {
                 return (
                   <SwiperSlide key={index}>
                     {index === htmlTag.length - 1 ? (
-                      <a href={item.url}>바로가기</a>
+                      <div className="seeAll">
+                        <a href="#" className="seeAll-a">
+                          <i></i>
+                          <p>전체보기</p>
+                        </a>
+                      </div>
                     ) : (
                       <div className="recommend-slide-item">
                         <a href={item.url} className="recommend-link">
@@ -176,7 +181,9 @@ function Recommend() {
           </div>
         </div>
 
-        <div className="recommend-footer"></div>
+        <div class="recommend-footer">
+          <a href="#!">쇼핑 홈 바로가기</a>
+        </div>
       </InnerArea>
     </SectionTag>
   );

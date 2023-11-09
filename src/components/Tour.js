@@ -128,7 +128,12 @@ function Tour() {
                 return (
                   <SwiperSlide key={index}>
                     {index === htmlTag.length - 1 ? (
-                      <a href={item.url}>바로가기</a>
+                      <div className="seeAll">
+                        <a href="#" className="seeAll-a">
+                          <i></i>
+                          <p>전체보기</p>
+                        </a>
+                      </div>
                     ) : (
                       <div className="tour-slide-item">
                         <a href={item.url} className="tour-link">

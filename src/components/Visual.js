@@ -18,13 +18,42 @@ function Visual() {
   // 외부 데이터 연동 (axios 활용)
   const axiosGetData = function () {
     axios
-      .get("visual.json")
+      .get("http://localhost:4000/visual")
       .then(function (res) {
         // console.log(res.data);
         makeVisualSlide(res.data);
       })
       .catch(function (error) {
         console.log(error);
+        // 우리가 작업할 더미를 작성해 둬야 합니다.
+        const dObj = {
+          total: 6,
+          visual_1: {
+            file: "images/v1.png",
+            url: "a.html",
+          },
+          visual_2: {
+            file: "images/v2.jpg",
+            url: "b.html",
+          },
+          visual_3: {
+            file: "images/v3.jpg",
+            url: "c.html",
+          },
+          visual_4: {
+            file: "images/v4.jpg",
+            url: "d.html",
+          },
+          visual_5: {
+            file: "images/v5.jpg",
+            url: "e.html",
+          },
+          visual_6: {
+            file: "images/v6.png",
+            url: "f.html",
+          },
+        };
+        makeVisualSlide(dObj);
       });
   };
 
@@ -99,6 +128,10 @@ function Visual() {
     display: block;
     overflow: hidden;
     border-radius: 13px;
+
+    img {
+      width: 100%;
+    }
   `;
 
   return (
