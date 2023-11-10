@@ -19,6 +19,11 @@ function Tour() {
   // 리액트 변수를 만든다.
   const [htmlTag, setHtmlTag] = useState([]);
 
+  function numberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  numberWithCommas(69000);
+
   // 외부 데이터 연동하기 (axios 이용)
   const axiosJsonData = () => {
     axios
@@ -129,7 +134,7 @@ function Tour() {
                   <SwiperSlide key={index}>
                     {index === htmlTag.length - 1 ? (
                       <div className="seeAll">
-                        <a href="#" className="seeAll-a">
+                        <a href="#!" className="seeAll-a">
                           <i></i>
                           <p>전체보기</p>
                         </a>
@@ -155,10 +160,12 @@ function Tour() {
                                   {item.desc}
                                 </span>
                               </li>
-                              <li className="tour-good-info">
+                              <li class="tour-good-info">
                                 <span>
-                                  <b>{item.price}</b>
-                                  원~
+                                  <b class="tour-good-info-price">
+                                    {numberWithCommas(item.price)}
+                                  </b>
+                                  <span class="tour-good-info-unit">원~</span>
                                 </span>
                               </li>
                             </ul>
