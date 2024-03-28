@@ -1,0 +1,188 @@
+.book {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 90px;
+}
+
+.book-inner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.book-header {
+  position: relative;
+  text-align: center;
+}
+
+.book-title {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.book-txt {
+  position: relative;
+  font-size: 1.8rem;
+  color: #a7a9a7;
+}
+
+.book-main {
+  position: relative;
+  padding: 25px 0;
+}
+
+.book-category {
+  position: relative;
+}
+
+.book-list {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.book-cate-bt {
+  position: relative;
+  padding: 0 20px;
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  font-size: 1.4rem;
+  line-height: 42px;
+  cursor: pointer;
+  color: #111;
+  border-radius: 44px;
+}
+
+.book-cate-bt-active {
+  position: relative;
+  border: 1px solid transparent;
+  background-color: #333;
+  font-weight: 700;
+  color: #fff;
+}
+
+.book-slide-wrap {
+  position: relative;
+  height: 534px;
+  margin-top: 23px;
+}
+
+.book-slide-item {
+  position: relative;
+  width: 234px;
+  height: 393px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.book-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.book-img img {
+  position: relative;
+  width: 100%;
+  height: 334px;
+  object-fit: cover;
+}
+
+.book-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.book-count {
+  position: absolute;
+  left: 2.2rem;
+  bottom: 1.4rem;
+  font-size: 7rem;
+  line-height: 8.35rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2;
+}
+
+.book-info {
+  position: relative;
+  height: calc(100% - 334px);
+  padding: 1.6rem 0.8rem;
+}
+
+.book-good-list {
+  position: relative;
+}
+
+.book-good-list li {
+  position: relative;
+  width: 234px;
+}
+
+.book-good-info-title {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
+.book-good-info-location {
+  position: relative;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.book-good-info-date {
+  position: relative;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #999;
+  text-overflow: ellipsis;
+}
+
+.book-good-info-badge {
+  margin-top: 0.7rem;
+  line-height: 2.4rem;
+  font-size: 1.1rem;
+}
+
+.book-good-info-badge i {
+  position: relative;
+  padding: 0.4rem 0.8rem;
+
+  border: 1px solid rgba(74, 149, 255, 0.3);
+  color: #4a95ff;
+}
+
+.book-footer {
+  text-align: center;
+}
+
+.book-footer a {
+  display: inline-block;
+  width: auto;
+  height: 5.6rem;
+  line-height: 5.6rem;
+  padding: 0 3.9rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.8rem;
+  font-weight: 700;
+}
+.book-footer a::after {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 1.1rem;
+  margin-left: 0.7rem;
+  background: url("/publish/images/linkArrow.svg") no-repeat;
+}

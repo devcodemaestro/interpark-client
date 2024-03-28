@@ -1,0 +1,63 @@
+{
+  "total": 10,
+  "good_1": {
+    "image": "images/book1.jpg",
+    "title": "세계미래보고서 2024-2034",
+    "price": "17550",
+    "url": "a.html"
+  },
+  "good_2": {
+    "image": "images/book2.jpg",
+    "title": "[그린키즈] 룰루랄라 사운드북 모음전",
+    "price": "8400",
+    "url": "a.html"
+  },
+  "good_3": {
+    "image": "images/book3.jpg",
+    "title": "어스본 대표사운드북 모음 낱권선택",
+    "price": "17100",
+    "url": "a.html"
+  },
+  "good_4": {
+    "image": "images/book4.jpg",
+    "title": "고양이 해결사 깜냥 6",
+    "price": "10800",
+    "url": "a.html"
+  },
+  "good_5": {
+    "image": "images/book5.jpg",
+    "title": "재개발·재건축 투자 무작정 따라하기",
+    "price": "24750",
+    "url": "a.html"
+  },
+  "good_6": {
+    "image": "images/book6.jpg",
+    "title": "옷뜨는 김뜨개의 쉬운 니트 레시피",
+    "price": "21600",
+    "url": "a.html"
+  },
+  "good_7": {
+    "image": "images/book7.jpg",
+    "title": "어린왕자 행성b612 소포 세트",
+    "price": "9900",
+    "url": "a.html"
+  },
+  "good_8": {
+    "image": "images/book8.png",
+    "title": "리딩게이트 No.1 영어독서 프로그램 12개월 이용권",
+    "price": "240000",
+    "url": "a.html"
+  },
+  "good_9": {
+    "image": "images/book9.jpg",
+    "title": "오감발달 첫 놀잇감",
+    "price": "128900",
+    "url": "a.html"
+  },
+  "good_10": {
+    "image": "images/book10.jpg",
+    "title": "흔한남매의 흔한 호기심 10",
+    "price": "12600",
+    "url": "a.html"
+  }
+}

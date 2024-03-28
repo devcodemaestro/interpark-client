@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import "../styles/recommend.css";
+import "../styles/book.css";
 import "../styles/common.css";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
@@ -25,9 +25,7 @@ function Recommend() {
   // 외부 데이터 연동하기 (axios 이용)
   const axiosJsonData = () => {
     axios
-      .get(
-        "https://port-0-interpark-server-7lk2blopixdnm.sel5.cloudtype.app/recommend"
-      )
+      .get("book.json")
       .then(function (res) {
         console.log(res.data);
 
@@ -43,86 +41,66 @@ function Recommend() {
       .catch(function (error) {
         console.log(error);
         const dmObj = {
-          total: 12,
+          total: 10,
           good_1: {
-            image: "images/r1.jpg",
-            discount: 47,
-            price: 6090,
-            desc: "[오쎈특가 쿠폰최종가 소형 5,070원]  [2024년 달력 얼리버드] 어린왕자, 앤, 곰돌이푸, 애드워드호퍼, 모네, 고흐, 윤동주 등",
+            image: "images/book1.jpg",
+            title: "세계미래보고서 2024-2034",
+            price: "17550",
             url: "a.html",
           },
           good_2: {
-            image: "images/r2.jpg",
-            discount: 0,
-            price: 12900,
-            desc: "유혜광 통등심돈까스 10장 (총 5팩)",
+            image: "images/book2.jpg",
+            title: "[그린키즈] 룰루랄라 사운드북 모음전",
+            price: "8400",
             url: "a.html",
           },
           good_3: {
-            image: "images/r3.jpg",
-            discount: 42,
-            price: 12900,
-            desc: "[10/31 단하루/한정수량] 매일 어메이징 오트 언스위트 190ml 24팩 + 오리지널 6팩 증정",
+            image: "images/book3.jpg",
+            title: "어스본 대표사운드북 모음 낱권선택",
+            price: "17100",
             url: "a.html",
           },
           good_4: {
-            image: "images/r4.png",
-            discount: 2,
-            price: 8240,
-            desc: "단하루! 베베숲 센시티브 20매 휴대 캡 12팩 외 휴대용 아기 물티슈 모음 / 외출 필수품",
+            image: "images/book4.jpg",
+            title: "고양이 해결사 깜냥 6",
+            price: "10800",
             url: "a.html",
           },
           good_5: {
-            image: "images/r5.jpg",
-            discount: 22,
-            price: 3900,
-            desc: "★10월 마지막!★ 베어파우 키즈 방한 패딩 양털 부츠 베이비 남아 여아 아기 어린이 유아",
+            image: "images/book5.jpg",
+            title: "재개발·재건축 투자 무작정 따라하기",
+            price: "24750",
             url: "a.html",
           },
           good_6: {
-            image: "images/r6.jpg",
-            discount: 29,
-            price: 34900,
-            desc: "[스포츠파크]  뉴발란스 남성 UNI 에센셜 스몰로고 맨투맨 4종택1",
+            image: "images/book6.jpg",
+            title: "옷뜨는 김뜨개의 쉬운 니트 레시피",
+            price: "21600",
             url: "a.html",
           },
           good_7: {
-            image: "images/r7.jpg",
-            discount: 2,
-            price: 22220,
-            desc: "[더쎈위크]  롯데빼빼로 3종 x 20갑 (오리지널/아몬드/초코필드) 골라담기",
+            image: "images/book7.jpg",
+            title: "어린왕자 행성b612 소포 세트",
+            price: "9900",
             url: "a.html",
           },
           good_8: {
-            image: "images/r8.jpg",
-            discount: 35,
-            price: 26900,
-            desc: "[한정수량특가]  한양식품 국내산 꽃보다오징어 오리지날 260g+260g",
+            image: "images/book8.png",
+            title: "리딩게이트 No.1 영어독서 프로그램 12개월 이용권",
+            price: "240000",
             url: "a.html",
           },
           good_9: {
-            image: "images/r9.jpg",
-            discount: 14,
-            price: 18260,
-            desc: "샤오미 미지아 가습기2/미지아 스마트 살균가습기2/MJJSQ06DY/관부가세포함",
+            image: "images/book9.jpg",
+            title: "오감발달 첫 놀잇감",
+            price: "128900",
             url: "a.html",
           },
           good_10: {
-            image: "images/r10.jpg",
-            discount: 18,
-            price: 2930,
-            desc: "[쇼핑앱특가2400원] 아이팝 무라벨 먹는샘물 생수 2L*6펫 / 하이트진로",
+            image: "images/book10.jpg",
+            title: "흔한남매의 흔한 호기심 10",
+            price: "12600",
             url: "a.html",
-          },
-          good_11: {
-            image: "images/r11.jpg",
-            discount: 25,
-            price: 10410,
-            desc: "제주 삼다수 2L 12병 (유/무라벨 랜덤발송) ",
-            url: "a.html",
-          },
-          good_12: {
-            url: "go.html",
           },
         };
         let arr = [];
